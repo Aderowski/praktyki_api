@@ -60,7 +60,22 @@
               <p class="fs-3">API jest specyfikacją wytycznych, w jaki sposób powinna przebiegać interakcja pomiędzy komponentami programowymi. Jest to zestaw rutyn i protokołów, rozwiązań informatyczny do budowy aplikacji komputerowych. API może również korzystać z komponentów graficznego interfejsu użytkownika. Dobre API powinno ułatwiać budowę oprogramowania. Są różne typy API, najbardziej przebiły się API webowe. Jest to rodzaj, w którym funkcje są udostępniane jako zasób w sieci. Bieżące wersje systemów API webowych pozwalają w bardzo łatwy sposób integrować informacje z sieci z aplikacjami, poszerzając ich funkcje lub umożliwiając współdziałanie.</p>
             </div>
             <div class="col-6">
-              <h1>Dzisiejsza pogoda:</h1>
+              <h1>Pogoda:</h1>
+              <div class="container searchContainer">
+                <div class="search card card-body">
+                    <h1>Podaj miejscowość dla której chcesz sprawdzić pogodę</h1>
+                    <input type="text" id="searchCity" class="form-control" placeholder="Location">
+                </div>
+                <br>
+                <div id="profile"></div>
+            </div>
+            <div class="container text-center mt-2">
+                <button class="btn btn-primary" id="submit">Submit</button>
+            </div>
+    
+            <div id="content">
+              <!--Miejsce na okienko-->
+            </div>
             </div>
         </div>
     </div>
@@ -109,6 +124,9 @@
     -->
     <script src="https://kit.fontawesome.com/817c2c56be.js" crossorigin="anonymous"></script>
     <script src="resources/js/btn_top.js"></script>
+    <script src="resources/js/weather/fetch.js"></script>
+    <script src="resources/js/weather/window.js"></script>
+    <script src="resources/js/weather/app.js"></script>
 </body>
 
 </html>
