@@ -14,6 +14,8 @@
 
     <link href="resources/css/main.css" rel="stylesheet">
 
+
+
     <title>Praktyki API</title>
 </head>
 
@@ -46,36 +48,132 @@
     </nav>
 
     <!-- Btn top -->
-    <button type="button" class="btn btn-dark btn-floating btn-lg position-fixed border border-2 border-warning" id="btn-back-to-top">
+    <button type="button" class="btn btn-dark btn-floating btn-lg position-fixed border border-2 border-warning"
+        id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- Content -->
     <div class="container">
         <div class="row align-items-start">
-            <div class="col-6">
-              <h1>Czym jest ta strona?</h1>
-              <p class="fs-3">Strona ma na celu przekazywanie przeróżnych informacji poprzez system API (Application Programming Interface - Interfejs programowania aplikacji).</p>
-              <h1>Czym jest API?</h1>
-              <p class="fs-3">API jest specyfikacją wytycznych, w jaki sposób powinna przebiegać interakcja pomiędzy komponentami programowymi. Jest to zestaw rutyn i protokołów, rozwiązań informatyczny do budowy aplikacji komputerowych. API może również korzystać z komponentów graficznego interfejsu użytkownika. Dobre API powinno ułatwiać budowę oprogramowania. Są różne typy API, najbardziej przebiły się API webowe. Jest to rodzaj, w którym funkcje są udostępniane jako zasób w sieci. Bieżące wersje systemów API webowych pozwalają w bardzo łatwy sposób integrować informacje z sieci z aplikacjami, poszerzając ich funkcje lub umożliwiając współdziałanie.</p>
+            <div class="col">
+                <h1>Czym jest ta strona?</h1>
+                <p class="fs-3">Strona ma na celu przekazywanie przeróżnych informacji poprzez system API (Application
+                    Programming Interface - Interfejs programowania aplikacji).</p>
+                <h1>Czym jest API?</h1>
+                <p class="fs-3">API jest specyfikacją wytycznych, w jaki sposób powinna przebiegać interakcja pomiędzy
+                    komponentami programowymi. Jest to zestaw rutyn i protokołów, rozwiązań informatyczny do budowy
+                    aplikacji komputerowych. API może również korzystać z komponentów graficznego interfejsu
+                    użytkownika. Dobre API powinno ułatwiać budowę oprogramowania. Są różne typy API, najbardziej
+                    przebiły się API webowe. Jest to rodzaj, w którym funkcje są udostępniane jako zasób w sieci.
+                    Bieżące wersje systemów API webowych pozwalają w bardzo łatwy sposób integrować informacje z sieci z
+                    aplikacjami, poszerzając ich funkcje lub umożliwiając współdziałanie.</p>
+
             </div>
-            <div class="col-6">
-              <h1>Pogoda:</h1>
-              <div class="container searchContainer">
-                <div class="search card card-body">
-                    <h1>Podaj miejscowość dla której chcesz sprawdzić pogodę</h1>
-                    <input type="text" id="searchCity" class="form-control" placeholder="Location">
+            <h1 class="mt-1">Pogoda:</h1>
+            <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWeather" aria-expanded="false" aria-controls="collapseExample">
+                    Rozwiń
+                </button>
+            </p>
+            <div class="collapse" id="collapseWeather">
+                <div class="card card-body">
+                    <div class="row">
+                        <div class="col">
+                            <div class="container searchContainer">
+                                <div class="search card card-body">
+                                    <h2>Podaj miejscowość</h2>
+                                    <input type="text" id="searchCity" class="form-control" placeholder="Location">
+                                </div>
+                                <br>
+                                <div id="profile"></div>
+                            </div>
+                            <div class="container text-center mt-1">
+                                <button class="btn btn-primary" id="submit">Submit</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="" id="content">
+                                <!-- Miejsce na okienko -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <br>
-                <div id="profile"></div>
             </div>
-            <div class="container text-center mt-2">
-                <button class="btn btn-primary" id="submit">Submit</button>
+
+            <h1 class="mt-1">Webhook prosty:</h1>
+            <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWebhook" aria-expanded="false" aria-controls="collapseExample">
+                    Rozwiń
+                </button>
+            </p>
+            <div class="collapse" id="collapseWebhook">
+                <div class="card card-body">
+                    <form action="resources/php/webhook_simple.php" method="post">
+                        <div class="mb-3">
+                            <label for="webhookUrlInput" class="form-label">Url</label>
+                            <input type="url" class="form-control" id="webhookUrlInput" name="url" aria-describedby="urlHelp" required>
+                            <div id="urlHelp" class="form-text">Upewnij się, że podałeś prawidłowy link.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="webhookNameInput" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="webhookUsernameInput" name="username" aria-describedby="urlHelp">
+                            <div id="urlHelp" class="form-text">Upewnij się, że podałeś prawidłową nazwę użytkownika.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="webhookContentInput" class="form-label">Content</label>
+                            <input type="text" class="form-control" id="webhookContentInput" name="content" aria-describedby="urlHelp">
+                            <div id="urlHelp" class="form-text">Upewnij się, że treść wiadomości jest prawidłowa.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="webhookAvatarInput" class="form-label">Url</label>
+                            <input type="url" class="form-control" id="webhookAvatarUrlInput" name="avatar_url" aria-describedby="urlHelp">
+                            <div id="urlHelp" class="form-text">Upewnij się, że podałeś prawidłowy link.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
+
+            <h1 class="mt-1">Webhook 'zaawansowany':</h1>
+            <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseWebhook2" aria-expanded="false" aria-controls="collapseExample">
+                    Rozwiń
+                </button>
+            </p>
+            <div class="collapse" id="collapseWebhook2">
+                <div class="card card-body">
+                    <!-- <form>
+                        <div class="mb-3">
+                          <label for="webhookUrlInput" class="form-label">Webhook URL</label>
+                          <input type="url" class="form-control" id="webhookUrlInput" placeholder="https://discord.com/api/webhooks/" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="webhookUsernameInput" class="form-label">Użytkownik</label>
+                            <input type="text" class="form-control" id="webhookUsernameInput" placeholder="" required>
+                            <div class="form-text">
+                                Nazwa użytkownika zostaje wyświetlona przez webhooka.  
+                        </div>
+                        <div class="mb-3">
+                            <label for="webhookAvatarInput" class="form-label">Avatar webhooka</label>
+                            <input type="text" class="form-control" id="webhookAvatarInput" placeholder="https://twój_link.jpg">
+                            <div class="form-text">
+                                Pamiętaj aby podać link z prawidłowym zakończeniem!
+                        </div>
+                        <p class="fs-4 mt-1">Wiadomość</p>
+                        <div class="mb-3">
+                            <label for="webhookTitleInput" class="form-label">Tytuł</label>
+                            <input type="text" class="form-control" id="webhookTitleInput" placeholder="">
+                            <div class="form-text">
+                                Pamiętaj aby podać link z prawidłowym zakończeniem!
+                        </div>
     
-            <div id="content">
-              <!--Miejsce na okienko-->
-            </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </form> -->
+                </div>
             </div>
         </div>
     </div>
