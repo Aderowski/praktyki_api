@@ -48,7 +48,8 @@
     </nav>
 
     <!-- Btn top -->
-    <button type="button" class="btn btn-dark btn-floating btn-lg position-fixed border border-2 border-warning"
+    <button type="button"
+        class="btn btn-dark btn-floating btn-lg position-fixed border border-2 border-light rounded-circle"
         id="btn-back-to-top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -59,7 +60,8 @@
             <div class="col">
                 <h1>Czym jest ta strona?</h1>
                 <p class="fs-3">Strona ma na celu przekazywanie przeróżnych informacji poprzez system API (Application
-                    Programming Interface - Interfejs programowania aplikacji).</p>
+                    Programming Interface - Interfejs programowania aplikacji).
+                </p>
                 <h1>Czym jest API?</h1>
                 <p class="fs-3">API jest specyfikacją wytycznych, w jaki sposób powinna przebiegać interakcja pomiędzy
                     komponentami programowymi. Jest to zestaw rutyn i protokołów, rozwiązań informatyczny do budowy
@@ -67,7 +69,8 @@
                     użytkownika. Dobre API powinno ułatwiać budowę oprogramowania. Są różne typy API, najbardziej
                     przebiły się API webowe. Jest to rodzaj, w którym funkcje są udostępniane jako zasób w sieci.
                     Bieżące wersje systemów API webowych pozwalają w bardzo łatwy sposób integrować informacje z sieci z
-                    aplikacjami, poszerzając ich funkcje lub umożliwiając współdziałanie.</p>
+                    aplikacjami, poszerzając ich funkcje lub umożliwiając współdziałanie.
+                </p>
 
             </div>
             <h1 class="mt-1">Pogoda:</h1>
@@ -105,7 +108,7 @@
             <h1 class="mt-1">Webhook prosty:</h1>
             <p>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseWebhook" aria-expanded="false" aria-controls="collapseExample">
+                    data-bs-target="#collapseWebhook" aria-expanded="false" aria-controls="collapseWebhook">
                     Rozwiń
                 </button>
             </p>
@@ -113,69 +116,143 @@
                 <div class="card card-body">
                     <form action="resources/php/webhook_simple.php" method="post">
                         <div class="mb-3">
-                            <label for="webhookUrlInput" class="form-label">Url</label>
-                            <input type="url" class="form-control" id="webhookUrlInput" name="url" aria-describedby="urlHelp" required>
+                            <label for="webhookUrlInput" class="form-label">URL Webhooka</label>
+                            <input type="url" class="form-control" id="webhookUrlInput" name="url"
+                                aria-describedby="urlHelp" required>
                             <div id="urlHelp" class="form-text">Upewnij się, że podałeś prawidłowy link.</div>
                         </div>
                         <div class="mb-3">
                             <label for="webhookNameInput" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="webhookUsernameInput" name="username" aria-describedby="urlHelp">
-                            <div id="urlHelp" class="form-text">Upewnij się, że podałeś prawidłową nazwę użytkownika.</div>
+                            <input type="text" class="form-control" id="webhookUsernameInput" name="username"
+                                aria-describedby="urlHelp">
+                            <div id="urlHelp" class="form-text">Upewnij się, że podałeś prawidłową nazwę użytkownika.
+                            </div>
                         </div>
                         <div class="mb-3">
                             <label for="webhookContentInput" class="form-label">Content</label>
-                            <input type="text" class="form-control" id="webhookContentInput" name="content" aria-describedby="urlHelp">
+                            <input type="text" class="form-control" id="webhookContentInput" name="content"
+                                aria-describedby="urlHelp">
                             <div id="urlHelp" class="form-text">Upewnij się, że treść wiadomości jest prawidłowa.</div>
                         </div>
                         <div class="mb-3">
-                            <label for="webhookAvatarInput" class="form-label">Url</label>
-                            <input type="url" class="form-control" id="webhookAvatarUrlInput" name="avatar_url" aria-describedby="urlHelp">
+                            <label for="webhookAvatarInput" class="form-label">URL awatara</label>
+                            <input type="url" class="form-control" id="webhookAvatarUrlInput" name="avatar_url"
+                                aria-describedby="urlHelp">
                             <div id="urlHelp" class="form-text">Upewnij się, że podałeś prawidłowy link.</div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Wyślij</button>
                     </form>
                 </div>
             </div>
 
-            <h1 class="mt-1">Webhook 'zaawansowany':</h1>
+            <h1 class="mt-1">Webhook z rozbudowaną wiadomością "embed":</h1>
             <p>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapseWebhook2" aria-expanded="false" aria-controls="collapseExample">
+                    data-bs-target="#collapseWebhook2" aria-expanded="false" aria-controls="collapseWebhook2">
                     Rozwiń
                 </button>
             </p>
             <div class="collapse" id="collapseWebhook2">
                 <div class="card card-body">
-                    <!-- <form>
+                    <form action="resources/php/webhook_advanced.php" method="post">
                         <div class="mb-3">
-                          <label for="webhookUrlInput" class="form-label">Webhook URL</label>
-                          <input type="url" class="form-control" id="webhookUrlInput" placeholder="https://discord.com/api/webhooks/" required>
+                            <label for="webhookUrlInput" class="form-label">Webhook URL</label>
+                            <input type="url" class="form-control" name="webhook_url" id="webhookUrlInput"
+                                placeholder="https://discord.com/api/webhooks/" required>
                         </div>
                         <div class="mb-3">
                             <label for="webhookUsernameInput" class="form-label">Użytkownik</label>
-                            <input type="text" class="form-control" id="webhookUsernameInput" placeholder="" required>
+                            <input type="text" class="form-control" name="username" id="webhookUsernameInput"
+                                placeholder="Tutaj wpisz nazwę użytkownika" required>
                             <div class="form-text">
-                                Nazwa użytkownika zostaje wyświetlona przez webhooka.  
-                        </div>
-                        <div class="mb-3">
-                            <label for="webhookAvatarInput" class="form-label">Avatar webhooka</label>
-                            <input type="text" class="form-control" id="webhookAvatarInput" placeholder="https://twój_link.jpg">
-                            <div class="form-text">
-                                Pamiętaj aby podać link z prawidłowym zakończeniem!
-                        </div>
-                        <p class="fs-4 mt-1">Wiadomość</p>
-                        <div class="mb-3">
-                            <label for="webhookTitleInput" class="form-label">Tytuł</label>
-                            <input type="text" class="form-control" id="webhookTitleInput" placeholder="">
-                            <div class="form-text">
-                                Pamiętaj aby podać link z prawidłowym zakończeniem!
-                        </div>
-    
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                      </form> -->
+                                Nazwa użytkownika zostaje wyświetlona przez webhooka.
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookAvatarInput" class="form-label">Avatar webhooka</label>
+                                <input type="text" class="form-control" name="avatar_url" id="webhookAvatarInput"
+                                    placeholder="https://twój_link.jpg">
+                                <div class="form-text">
+                                    Pamiętaj aby podać link z prawidłowym zakończeniem!
+                                </div>
+                            </div>
+                            <p class="fs-4 mt-1">Wiadomość</p>
+                            <div class="mb-3">
+                                <label for="webhookTitleInput" class="form-label">Tytuł</label>
+                                <input type="text" class="form-control" name="title" id="webhookTitleInput"
+                                    placeholder="Tutaj wpisz tytuł">
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookDescriptionInput" class="form-label">Opis</label>
+                                <input type="text" class="form-control" name="description" id="webhookDescriptionInput"
+                                    placeholder="Tutaj wpisz opis">
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookTitleUrlInput" class="form-label">URL do tytułu</label>
+                                <input type="text" class="form-control" name="title_url" id="webhookTitleUrlInput"
+                                    placeholder="https://twój_link">
+                                <div class="form-text">
+                                    Po kliknięciu na tytuł załączy się podany link.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookDateInput" class="form-label">Data</label>
+                                <input type="datetime-local" class="form-control" name="data" id="webhookDateInput" placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookDateInput" class="form-label">Kolor</label>
+                                <input type="color" class="form-control" name="color" id="webhookColorInput" placeholder="">
+                            </div>
+                            <p class="fs-5 mt-1">Stopka</p>
+                            <div class="mb-3">
+                                <label for="webhookThumbnailInput" class="form-label">Tekst</label>
+                                <input type="text" class="form-control" name="footer_text" id="webhookThumbnailInput"
+                                    placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookThumbnailInput" class="form-label">URL obrazka</label>
+                                <input type="text" class="form-control" name="footer_img" id="webhookThumbnailInput"
+                                    placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookImageInput" class="form-label">Image</label>
+                                <input type="url" class="form-control" name="image" id="webhookImageInput"
+                                    placeholder="https://twój_link.jpg">
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookThumbnailInput" class="form-label">Thumbnail</label>
+                                <input type="url" class="form-control" name="thumbnail" id="webhookThumbnailInput"
+                                    placeholder="https://twój_link.jpg">
+                            </div>
+                            <p class="fs-5 mt-1">Autor</p>
+                            <div class="mb-3">
+                                <label for="webhookAuthorNameInput" class="form-label">Nazwa autora</label>
+                                <input type="text" class="form-control" name="author_name" id="webhookAuthorNameInput"
+                                    placeholder="Tutaj wpisz autora">
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookAuthorUrlInput" class="form-label">Link do autora</label>
+                                <input type="text" class="form-control" name="author_link" id="webhookAuthorUrlInput"
+                                    placeholder="Tutaj podaj link do autora">
+                            </div>
+                            <p class="fs-5 mt-1">Pola wiadomości</p>
+                            <div class="mb-3">
+                                <label for="webhookFieldName0Input" class="form-label">Pole 1 - nagłówek</label>
+                                <input type="text" class="form-control" name="field_name1" id="webhookFieldName0Input" placeholder="">
+                            </div>
+                            <div class="mb-3">
+                                <label for="webhookFieldValue0Input" class="form-label">Pole 1 - treść</label>
+                                <input type="text" class="form-control" name="field_value1" id="webhookFieldValue0Input" placeholder="">
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" name="field_inline1" id="webhookFieldInline0">
+                                <label class="form-check-label" for="webhookFieldInline0">Inline</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-1">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <section class="">

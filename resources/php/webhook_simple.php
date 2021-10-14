@@ -17,4 +17,7 @@ $response   = curl_exec($ch);
 if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
+
+header("Location: /");
+
 ?>

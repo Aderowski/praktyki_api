@@ -1,58 +1,57 @@
 <?php
 
-$url = "https://discord.com/api/webhooks/894959637315616778/27Xn1fvTZNSsq8JTAi2CcRCCFNhqHlpJUOfGCVQ8eyj60lGat5_F0BIaoVL2gyvu36i0";
-$headers = [ 'Content-Type: application/json; charset=utf-8' ];
+$url = $_POST['webhook_url'];
 $POST = [ 'username' => $_POST['username'], 'content' => $_POST['content'], 'avatar_url' => $_POST['avatar_url'], "embeds" => [
         [
             // Set the title for your embed
-            "title" => "tytuł",
+            "title" => $_POST['title'],
 
             // The type of your embed, will ALWAYS be "rich"
             "type" => "rich",
 
             // A description for your embed
-            "description" => "opis",
+            "description" => $_POST['description'],
 
             // The URL of where your title will be a link to
-            "url" => "https://www.google.com/",
+            "url" => $_POST['title_url'],
 
             /* A timestamp to be displayed below the embed, IE for when an an article was posted
              * This must be formatted as ISO8601
              */
-            "timestamp" => "2018-03-10T19:15:45-05:00",
+            "timestamp" => $_POST['data'],
 
             // The integer color to be used on the left side of the embed
-            "color" => hexdec( "FFFFFF" ),
+            "color" => $_POST['color'],
 
             // Footer object
             "footer" => [
-                "text" => "Google TM",
-                "icon_url" => "https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU_400x400.jpg"
+                "text" => $_POST['footer_text'],
+                "icon_url" => $_POST['footer_img']
             ],
 
             // Image object
             "image" => [
-                "url" => "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+                "url" => $_POST['image']
             ],
 
             // Thumbnail object
             "thumbnail" => [
-                "url" => "https://pbs.twimg.com/profile_images/972154872261853184/RnOg6UyU_400x400.jpg"
+                "url" => $_POST['thumbnail']
             ],
 
             // Author object
             "author" => [
-                "name" => "Alphabet",
-                "url" => "https://www.abc.xyz"
+                "name" => $_POST['author_name'],
+                "url" => $_POST['author_link']
             ],
 
             // Field array of objects
             "fields" => [
                 // Field 1
                 [
-                    "name" => "Data A",
-                    "value" => "Value A",
-                    "inline" => false
+                    "name" => $_POST['field_name1'],
+                    "value" => $_POST['field_value1'],
+                    "inline" => $_POST['field_inline1']
                 ],
                 // Field 2
                 [
@@ -83,3 +82,5 @@ $response   = curl_exec($ch);
 if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
+    header("Location: /");
+?>
