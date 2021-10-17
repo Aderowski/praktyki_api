@@ -13,7 +13,7 @@ class WindowUI {
           <div class="card mx-auto mt-5" style="width: 18rem;">
               <div class="card-body justify-content-center">
                   <h5 class="card-title">${data.name}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Temperatura: ${Math.round(data.main.temp)}°C.</h6>
+                  <h6>Temperatura: ${Math.round(data.main.temp)}°C.</h6>
                   <h6>Odczuwalne: ${Math.round(data.main.feels_like)}°C.</h6>
                   <h6>Ciśnienie: ${data.main.pressure} hpa.</h6>
                   <h6>Wilgotność: ${data.main.humidity}%.</h6>
