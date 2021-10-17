@@ -21,7 +21,11 @@ $POST = [ 'username' => $_POST['username'], 'content' => '', 'avatar_url' => $_P
              "timestamp" => $_POST['data'],
  
             // The integer color to be used on the left side of the embed
+<<<<<<< HEAD
             "color" => hexdec( substr($_POST['color'], 1)), //
+=======
+            "color" => hexdec( substr($_POST['color'], 1)),
+>>>>>>> 8f66e0a000fc51ec09bbe8240af8b8d5b6602980
  
             // Footer object
             "footer" => [
@@ -42,7 +46,11 @@ $POST = [ 'username' => $_POST['username'], 'content' => '', 'avatar_url' => $_P
             // Author object
             "author" => [
                 "name" => $_POST['author_name'],
+<<<<<<< HEAD
                 "url" => $_POST['author_link'] // dodac wymóg wprowadzenia danych
+=======
+                "url" => $_POST['author_link'] // wymog wprowadzenia danych
+>>>>>>> 8f66e0a000fc51ec09bbe8240af8b8d5b6602980
             ],
  
             // Field array of objects
@@ -82,4 +90,7 @@ $response   = curl_exec($ch);
 if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
+<<<<<<< HEAD
  
+=======
+>>>>>>> 8f66e0a000fc51ec09bbe8240af8b8d5b6602980
