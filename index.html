@@ -152,7 +152,7 @@
                 </p>
                 <div class="collapse" id="collapseWebhook2">
                     <div class="card card-body">
-                        <form action="resources/php/webhook_advanced.php" method="post">
+                        <form>
                             <div class="mb-3">
                                 <label for="webhookUrlInput" class="form-label">Webhook URL</label>
                                 <input type="url" class="form-control" name="webhook_url" id="webhookUrlInput"
@@ -168,7 +168,7 @@
                                 <div class="mb-3">
                                     <label for="webhookAvatarInput" class="form-label">Avatar webhooka</label>
                                     <input type="text" class="form-control" name="avatar_url" id="webhookAvatarInput"
-                                        placeholder="https://twój_link.jpg">
+                                        placeholder="https://twój_link.jpg" required>
                                     <div class="form-text">
                                         Pamiętaj aby podać link z prawidłowym zakończeniem!
                                     </div>
@@ -177,12 +177,12 @@
                                 <div class="mb-3">
                                     <label for="webhookTitleInput" class="form-label">Tytuł</label>
                                     <input type="text" class="form-control" name="title" id="webhookTitleInput"
-                                        placeholder="Tutaj wpisz tytuł">
+                                        placeholder="Tutaj wpisz tytuł" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookDescriptionInput" class="form-label">Opis</label>
                                     <input type="text" class="form-control" name="description"
-                                        id="webhookDescriptionInput" placeholder="Tutaj wpisz opis">
+                                        id="webhookDescriptionInput" placeholder="Tutaj wpisz opis" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookTitleUrlInput" class="form-label">URL do tytułu</label>
@@ -195,23 +195,23 @@
                                 <div class="mb-3">
                                     <label for="webhookDateInput" class="form-label">Data</label>
                                     <input type="datetime-local" class="form-control" name="data" id="webhookDateInput"
-                                        placeholder="">
+                                        required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookDateInput" class="form-label">Kolor</label>
                                     <input type="color" class="form-control" name="color" id="webhookColorInput"
-                                        placeholder="">
+                                        required>
                                 </div>
                                 <p class="fs-5 mt-1">Stopka</p>
                                 <div class="mb-3">
                                     <label for="webhookThumbnailInput" class="form-label">Tekst</label>
                                     <input type="text" class="form-control" name="footer_text"
-                                        id="webhookThumbnailInput" placeholder="">
+                                        id="webhookThumbnailInput">
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookThumbnailInput" class="form-label">URL obrazka</label>
                                     <input type="text" class="form-control" name="footer_img" id="webhookThumbnailInput"
-                                        placeholder="">
+                                       >
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookImageInput" class="form-label">Image</label>
@@ -227,31 +227,32 @@
                                 <div class="mb-3">
                                     <label for="webhookAuthorNameInput" class="form-label">Nazwa autora</label>
                                     <input type="text" class="form-control" name="author_name"
-                                        id="webhookAuthorNameInput" placeholder="Tutaj wpisz autora">
+                                        id="webhookAuthorNameInput" placeholder="Tutaj wpisz autora" required>
                                 </div>
-                                <div class="mb-3">
+                                <!-- <div class="mb-3">
                                     <label for="webhookAuthorUrlInput" class="form-label">Link do autora</label>
                                     <input type="text" class="form-control" name="author_link"
-                                        id="webhookAuthorUrlInput" placeholder="Tutaj podaj link do autora">
-                                </div>
+                                        id="webhookAuthorUrlInput" placeholder="Tutaj podaj link do autora" required>
+                                </div> -->
                                 <p class="fs-5 mt-1">Pola wiadomości</p>
                                 <div class="mb-3">
                                     <label for="webhookFieldName0Input" class="form-label">Pole 1 - nagłówek</label>
                                     <input type="text" class="form-control" name="field_name1"
-                                        id="webhookFieldName0Input" placeholder="">
+                                        id="webhookFieldName0Input" >
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookFieldValue0Input" class="form-label">Pole 1 - treść</label>
                                     <input type="text" class="form-control" name="field_value1"
-                                        id="webhookFieldValue0Input" placeholder="">
+                                        id="webhookFieldValue0Input" >
                                 </div>
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" name="field_inline1"
                                         id="webhookFieldInline0">
                                     <label class="form-check-label" for="webhookFieldInline0">Liniowe</label>
                                 </div>
-                                <button type="submit" class="btn btn-primary mt-1">Wyślij</button>
+                                <button onclick="sendMessage()" class="btn btn-primary mt-1">Wyślij</button>
                         </form>
+                        <img src="resources/other/embed.png">
                     </div>
                 </div>
             </div>
@@ -325,7 +326,7 @@
     <script src="resources/js/weather/fetch.js"></script>
     <script src="resources/js/weather/window.js"></script>
     <script src="resources/js/weather/app.js"></script>
-    <script src="resources/js/covid/app.js"></script>
+    <script src="resources/js/webhook/webhook_advanced.js"></script>
     </body>
 
 </html>
