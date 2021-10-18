@@ -10,7 +10,7 @@ class WindowUI {
       //wyswietla okienko z informacjami
       this.uiContainer.innerHTML = `
           
-          <div class="card mx-auto mt-5" style="width: 18rem;">
+          <div class="card mx-auto mt-5">
               <div class="card-body justify-content-center">
                   <h5 class="card-title">${data.name}</h5>
                   <h6>Temperatura: ${Math.round(data.main.temp)}°C.</h6>
