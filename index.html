@@ -198,8 +198,8 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookThumbnailInput" class="form-label">URL obrazka</label>
-                                    <input type="text" class="form-control" name="footer_img" id="webhookThumbnailInput"
-                                       >
+                                    <input type="text" class="form-control" name="footer_img"
+                                        id="webhookThumbnailInput">
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookImageInput" class="form-label">Image</label>
@@ -226,12 +226,12 @@
                                 <div class="mb-3">
                                     <label for="webhookFieldName0Input" class="form-label">Pole 1 - nagłówek</label>
                                     <input type="text" class="form-control" name="field_name1"
-                                        id="webhookFieldName0Input" >
+                                        id="webhookFieldName0Input">
                                 </div>
                                 <div class="mb-3">
                                     <label for="webhookFieldValue0Input" class="form-label">Pole 1 - treść</label>
                                     <input type="text" class="form-control" name="field_value1"
-                                        id="webhookFieldValue0Input" >
+                                        id="webhookFieldValue0Input">
                                 </div>
                                 <div class="form-check">
                                     <input type="checkbox" class="form-check-input" name="field_inline1"
@@ -256,23 +256,14 @@
             </button>
         </p>
         <div class="collapse" id="collapseCovid">
-            <div class="card" style="width: 18rem;">
-                <div class="card-header">
-                    <span id="country">Kraj: </span>
+            <div class="card card-body">
+                <div id="covid">
+                    <!-- Miejsce na okno Covidowe -->
                 </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span id="confirmed">Potwierdzone: </span></li>
-                    <li class="list-group-item"><span id="deaths">Zgony: </span></li>
-                    <li class="list-group-item"><span id="capital_city">Stolica: </span></li>
-                    <li class="list-group-item"><span id="updated">Ostatnia aktualizacja: </span></li>
-                </ul>
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
-    </div>
+</div>
 
     <section class="">
         <footer class="text-center text-white bg-dark">
@@ -314,6 +305,7 @@
     <script src="resources/js/weather/fetch.js"></script>
     <script src="resources/js/weather/window.js"></script>
     <script src="resources/js/weather/app.js"></script>
+    <script src="resources/js/covid/appCovid.js"></script>
     <script src="resources/js/webhook/webhook_advanced.js"></script>
     </body>
 

@@ -3,7 +3,7 @@ class WindowUI {
     constructor() {
       this.uiContainer = document.getElementById("content");
       this.city;
-      this.defaultCity = "Warszawa";
+      this.defaultCity = "Warsaw";
     }
   
     window(data) {
