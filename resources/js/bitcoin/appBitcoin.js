@@ -13,7 +13,6 @@ function getBitcoin() {
     }).then(function(resp) { return resp.json() })
 	.then(function(data) {
         console.log(data);
-        
 
 		document.getElementById("bitcoin").innerHTML = `
         <div class="card mx-auto mt-5">
@@ -21,8 +20,8 @@ function getBitcoin() {
 				<h3>Kraj: Bitcoin na USD</h3>
 			</div>
 			<ul class="list-group list-group-flush">
-				<li class="list-group-item">Cena: </li>
-				<li class="list-group-item">Zmiana w 24h:%</li>
+				<li class="list-group-item">Cena: $</li>
+				<li class="list-group-item">Zmiana w 24h: %</li>
 				<li class="list-group-item">Zmiana w 7d: %</li>
 				<li class="list-group-item">Zmiana w 30d: %</li>
 			</ul>
