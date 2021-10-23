@@ -1,7 +1,3 @@
-window.onload = function() {
-	getCovidStats(213);
-}
-
 function getCovidStats(inputCovid) {
 	fetch(`https://coronavirus-tracker-api.herokuapp.com/v2/locations/${inputCovid}`)
 	.then(function(resp) { return resp.json() })
