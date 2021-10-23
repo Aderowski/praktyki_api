@@ -30,13 +30,16 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">Pogoda</a>
+                        <a class="nav-link" href="">Pogoda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Webhooki</a>
+                        <a class="nav-link" href="">Webhooki</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Covid-19</a>
+                        <a class="nav-link" href="">Covid-19</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Bitcoin</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -68,7 +71,7 @@
                 </p>
             </div>
             <div class="col-6">
-                <h1 class="mt-1">Pogoda:</h1>
+                <h1 class="mt-1" id="weather">Pogoda:</h1>
                 <div class="card card-body">
                     <div class="" id="content">
                         <!-- Miejsce na okienko -->
@@ -87,7 +90,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col" id="webhooks">
                 <h1 class="mt-1">Webhook prosty:</h1>
                 <p>
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
@@ -140,7 +143,7 @@
                 </p>
                 <div class="collapse" id="collapseWebhook2">
                     <div class="card card-body">
-                        <form>
+                        <form action="resources/php/webhook_advanced.php" method="post">
                             <div class="mb-3">
                                 <label for="webhookUrlInput" class="form-label">Webhook URL</label>
                                 <input type="url" class="form-control" name="webhook_url" id="webhookUrlInput"
@@ -211,13 +214,13 @@
                                     <input type="url" class="form-control" name="thumbnail" id="webhookThumbnailInput"
                                         placeholder="https://twój_link.jpg">
                                 </div>
-                                <p class="fs-5 mt-1">Autor</p>
+                                <!-- <p class="fs-5 mt-1">Autor</p>
                                 <div class="mb-3">
                                     <label for="webhookAuthorNameInput" class="form-label">Nazwa autora</label>
                                     <input type="text" class="form-control" name="author_name"
                                         id="webhookAuthorNameInput" placeholder="Tutaj wpisz autora" required>
                                 </div>
-                                <!-- <div class="mb-3">
+                                <div class="mb-3">
                                     <label for="webhookAuthorUrlInput" class="form-label">Link do autora</label>
                                     <input type="text" class="form-control" name="author_link"
                                         id="webhookAuthorUrlInput" placeholder="Tutaj podaj link do autora" required>
@@ -238,7 +241,7 @@
                                         id="webhookFieldInline0">
                                     <label class="form-check-label" for="webhookFieldInline0">Liniowe</label>
                                 </div>
-                                <button onclick="sendMessage()" class="btn btn-primary mt-1">Wyślij</button>
+                                <input type="submit" class="btn btn-primary">Wyślij</input>
                         </form>
                         <img src="resources/other/embed.png">
                     </div>
@@ -248,7 +251,7 @@
         </div>
         <iframe class="mt-5" width="100%" height="500"
             src="https://e.widgetbot.io/channels/899441900283650138/899441900283650143"></iframe>
-        <div class="col-4">
+        <div class="col-4" id="covid">
             <h2>Covid19</h2>
             <p>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCovid"
@@ -264,7 +267,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-4">
+        <div class="col-4" id="btc">
             <h2>Bitcoin</h2>
             <p>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBitcoin"

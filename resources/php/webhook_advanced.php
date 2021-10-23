@@ -38,13 +38,6 @@ $POST = [ 'username' => $_POST['username'], 'content' => '', 'avatar_url' => $_P
             "thumbnail" => [
                 "url" => $_POST['thumbnail']
             ],
- 
-            // Author object
-            "author" => [
-                "name" => $_POST['author_name'],
-                "url" => ""
-            ],
- 
             // Field array of objects
             "fields" => [
                 // Field 1
@@ -79,6 +72,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($POST));
 $response   = curl_exec($ch);
+var_dump($_POST); die();
 if (isset($_SERVER["HTTP_REFERER"])) {
         header("Location: " . $_SERVER["HTTP_REFERER"]);
     }
