@@ -45,20 +45,7 @@ $POST = [ 'username' => $_POST['username'], 'content' => '', 'avatar_url' => $_P
                     "name" => $_POST['field_name1'],
                     "value" => $_POST['field_value1'],
                     "inline" => false
-                ],
-                // Field 2
-                [
-                    "name" => "Data B",
-                    "value" => "Value B",
-                    "inline" => true
-                ],
-                // Field 3
-                [
-                    "name" => "Data C",
-                    "value" => "Value C",
-                    "inline" => true
                 ]
-                // dodac dodawanie pól
             ]
         ]
     ]

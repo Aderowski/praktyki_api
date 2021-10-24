@@ -13,6 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
 
+    <!-- Własne CSS -->
     <link href="resources/css/main.css" rel="stylesheet">
 
     <title>Praktyki API</title>
@@ -30,16 +31,16 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Pogoda</a>
+                        <a class="nav-link" href="#weather">Pogoda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Webhooki</a>
+                        <a class="nav-link" href="#webhooks">Webhooki</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Covid-19</a>
+                        <a class="nav-link" href="#covid">Covid-19</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Bitcoin</a>
+                        <a class="nav-link" href="#btc">Bitcoin</a>
                     </li>
                 </ul>
                 <span class="navbar-text">
@@ -58,10 +59,11 @@
 
     <!-- Content -->
     <div class="container my-5">
-        <div class="row align-items-start">
-            <div class="col-6">
+        <div class="row justify-content-between">
+            <!-- Początek strony, informacje ogólne o API -->
+            <div class="col-8">
                 <h1>Czym jest API?</h1>
-                <p class="fs-3">API jest specyfikacją wytycznych, w jaki sposób powinna przebiegać interakcja pomiędzy
+                <p class="fs-3" style="text-align: justify;">API jest specyfikacją wytycznych, w jaki sposób powinna przebiegać interakcja pomiędzy
                     komponentami programowymi. Jest to zestaw rutyn i protokołów, rozwiązań informatyczny do budowy
                     aplikacji komputerowych. API może również korzystać z komponentów graficznego interfejsu
                     użytkownika. Dobre API powinno ułatwiać budowę oprogramowania. Są różne typy API, najbardziej
@@ -70,27 +72,26 @@
                     aplikacjami, poszerzając ich funkcje lub umożliwiając współdziałanie.
                 </p>
             </div>
-            <div class="col-6">
-                <h1 class="mt-1" id="weather">Pogoda:</h1>
-                <div class="card card-body">
-                    <div class="" id="content">
+            <!-- Wykorzystanie API pogodowego -->
+            <div class="col-4">
+                <h1 id="weather">Pogoda:</h1>
+                <div class="card card-body py-0">
+                    <div class="my-3" id="content">
                         <!-- Miejsce na okienko -->
                     </div>
-                    <br><br>
                     <div class="container searchContainer">
                         <div class="search card card-body">
-                            <h2>Podaj miejscowość</h2>
-                            <input type="text" id="searchCity" class="form-control" placeholder="Miejscowość">
+                            <input type="text" id="searchCity" class="form-control" placeholder="Tutaj wprowadź miejscowość">
                         </div>
-                        <br>
                         <div id="profile"></div>
                     </div>
-                    <div class="container text-center mt-1">
-                        <button class="btn btn-primary" id="submit">Submit</button>
+                    <div class="container text-center my-3">
+                        <button class="btn btn-primary" id="submit">Wyślij</button>
                     </div>
                 </div>
             </div>
-            <div class="col" id="webhooks">
+            <!-- Webhook wysyłający wiadomość -->
+            <div class="col-6" id="webhooks">
                 <h1 class="mt-1">Webhook prosty:</h1>
                 <p>
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
@@ -133,7 +134,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
+            <!-- Zaawansowany webhook, wykorzystujący wiadomość "embed" -->
+            <div class="col-6">
                 <h1 class="mt-1">Webhook typu "embed":</h1>
                 <p>
                     <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
@@ -214,17 +216,6 @@
                                     <input type="url" class="form-control" name="thumbnail" id="webhookThumbnailInput"
                                         placeholder="https://twój_link.jpg">
                                 </div>
-                                <!-- <p class="fs-5 mt-1">Autor</p>
-                                <div class="mb-3">
-                                    <label for="webhookAuthorNameInput" class="form-label">Nazwa autora</label>
-                                    <input type="text" class="form-control" name="author_name"
-                                        id="webhookAuthorNameInput" placeholder="Tutaj wpisz autora" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="webhookAuthorUrlInput" class="form-label">Link do autora</label>
-                                    <input type="text" class="form-control" name="author_link"
-                                        id="webhookAuthorUrlInput" placeholder="Tutaj podaj link do autora" required>
-                                </div> -->
                                 <p class="fs-5 mt-1">Pola wiadomości</p>
                                 <div class="mb-3">
                                     <label for="webhookFieldName0Input" class="form-label">Pole 1 - nagłówek</label>
@@ -236,11 +227,6 @@
                                     <input type="text" class="form-control" name="field_value1"
                                         id="webhookFieldValue0Input">
                                 </div>
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" name="field_inline1"
-                                        id="webhookFieldInline0">
-                                    <label class="form-check-label" for="webhookFieldInline0">Liniowe</label>
-                                </div>
                                 <input type="submit" class="btn btn-primary">Wyślij</input>
                         </form>
                         <img src="resources/other/embed.png">
@@ -249,10 +235,37 @@
             </div>
 
         </div>
-        <iframe class="mt-5" width="100%" height="600"
-            src="https://e.widgetbot.io/channels/899441900283650138/899441900283650143"></iframe>
-        <div class="col-4" id="covid">
-            <h2>Covid19</h2>
+        <!-- Informacje o tym jak pozyskać link do webhooka oraz podgląd wysłanych wiadomości -->
+        <h1 class="mt-1">Podgląd efektu webhooków oraz jak zdobyć link do nich:</h1>
+        <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWebhookInfo" aria-expanded="false" aria-controls="collapseWebhook2">
+                Przełącz
+            </button>
+        </p>
+        <div class="collapse" id="collapseWebhookInfo">
+            <div class="card card-body">
+                <div>
+                    <p>Aby pozyskać link do webhooka musimy posiadać własny serwer lub posiadać uprawnienia
+                        administratora na wybranym. Aby utworzyć serwer należy kliknąć zielony &plus; po lewej stronie
+                        aplikacji.</p>
+                    <img height="400" src="resources/other/poradnik_1.png"> <img height="400"
+                        src="resources/other/poradnik_2.png">
+                    <p>I prosto przechodzimy przez proces tworzenia serwera. Istnieje też możliwość utworzenia serwera
+                        przez gotowe już szablony. Gdy serwer jest gotowy klikamy na dowolny kanał tekstowy następnie
+                        "edytuj" i wchodzimy w "integracje" w integracjach klikamy na webhooki i tworzymy nowego, możemy
+                        ustawić mu domyślną nazwę oraz awatar. Znajdziemy tam potrzebny dla nas link.</p>
+                    <img src="resources/other/poradnik_3.png">
+                    <p>Lista utworzonych webhooków jest również dostępna w ustawieniach serwera.</p>
+                    <p>Wykorzystanie webhooków można wykorzystać poprzez funkcję i wysyłać powiadomienia z przeróżnych akcji począwszy od wysłania informacji o odwiedzinach użytkownika na stronie do bardziej skomplikowanych operacji. Przedstawione działanie jest tylko poglądowym rozjaśniającym funkcję działania webhooków.</p>
+                </div>
+                <iframe class="my-5" width="100%" height="900"
+                    src="https://e.widgetbot.io/channels/899441900283650138/899441900283650143"></iframe>
+            </div>
+        </div>
+        <!-- Wykorzystanie API z COVID -->
+        <div class="col-6" id="covid">
+            <h2>COVID-19</h2>
             <p>
                 <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCovid"
                     aria-expanded="false" aria-controls="collapseCovid">
@@ -267,11 +280,12 @@
                 </div>
             </div>
         </div>
-        <div class="col-4" id="btc">
+        <!-- Wykorzystanie API z BTC -->
+        <div class="col-6" id="btc">
             <h2>Bitcoin</h2>
             <p>
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBitcoin"
-                    aria-expanded="false" aria-controls="collapseBitcoin">
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseBitcoin" aria-expanded="false" aria-controls="collapseBitcoin">
                     Przełącz
                 </button>
             </p>
@@ -286,7 +300,7 @@
     </div>
     </div>
 
-
+<!-- Stopka -->
     <section class="">
         <footer class="text-center text-white bg-dark">
             <div class="container p-4 pb-0">
@@ -315,13 +329,14 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous">
-        </script>
+    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.min.js" integrity="sha384-PsUw7Xwds7x08Ew3exXhqzbhuEYmA2xnwc8BuD6SEr+UmEHlX8/MCltYEodzWA4u" crossorigin="anonymous"></script>
     -->
+    <!-- Własne skrypty -->
     <script src="https://kit.fontawesome.com/817c2c56be.js" crossorigin="anonymous"></script>
     <script src="resources/js/btn_top.js"></script>
     <script src="resources/js/weather/fetch.js"></script>
