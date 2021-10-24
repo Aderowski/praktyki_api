@@ -3,6 +3,8 @@ function getCovidStats(inputCovid) {
 	.then(function(resp) { return resp.json() })
 	.then(function(data) {
 
+		// console.log(data);
+		
 		let confirmedCases = data.location.latest.confirmed;
 		let update = data.location.last_updated;
 		let deaths = data.location.latest.deaths;

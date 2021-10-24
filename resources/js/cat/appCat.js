@@ -2,7 +2,9 @@ function getCat() {
 	fetch(`https://api.thecatapi.com/v1/images/search`)
 	.then(function(resp) { return resp.json() })
 	.then(function(data) {
-        console.log(data)
+		
+        // console.log(data);
+
         let linkCat = data[0].url;
 		document.getElementById("cat").innerHTML = `
         <div class="card mx-auto mt-5">
