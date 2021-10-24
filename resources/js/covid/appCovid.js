@@ -9,7 +9,7 @@ function getCovidStats(inputCovid) {
 		let country = data.location.country;
 		let population = data.location.country_population;
 
-		document.getElementById("covid").innerHTML = `
+		document.getElementById("covidWindow").innerHTML = `
 		<div class="card mx-auto mt-5">
 			<div class="card-header">
 				<h3>Kraj: ${country}</h3>
@@ -25,6 +25,6 @@ function getCovidStats(inputCovid) {
 
 	})
 	.catch(function() {
-		console.log("error");
+		console.log("error covid");
 	})
 }
